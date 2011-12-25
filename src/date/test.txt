@@ -1,0 +1,4 @@
+select b.name,a.url from tuan_base b left join tuan_api a on b.id=a.tuanid where b.apiaddr!='' and a.url is not null into outfile 'c:/good.csv' fields terminated by ',' optionally enclosed by '"' l
+ines terminated by '\n';
+select b.name,b.apiaddr from tuan_base b left join tuan_api a on b.id=a.tuanid where b.apiaddr!='' and a.url is null into outfile 'c:/error.csv' fields terminated by ',' optionally enclosed by '"' l
+ines terminated by '\n';
